@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.CheckBox?>
+<?import javafx.scene.control.Menu?>
+<?import javafx.scene.control.MenuBar?>
+<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.control.SeparatorMenuItem?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.input.KeyCodeCombination?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.FlowPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<VBox prefHeight="400.0" prefWidth="640.0" xmlns="http://javafx.com/javafx/9" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ttt.App">
+  <children>
+    <MenuBar fx:id="menuBar" VBox.vgrow="NEVER">
+      <menus>
+        <Menu text="%menu.file">
+          <items>
+            <MenuItem onAction="#onMenuOpenSelected" text="%menu.open">
+                     <accelerator>
+                        <KeyCodeCombination alt="UP" code="O" control="UP" meta="UP" shift="UP" shortcut="DOWN" />
+                     </accelerator></MenuItem>
+            <SeparatorMenuItem mnemonicParsing="false" />
+            <MenuItem onAction="#onMenuCloseSelected" text="%menu.quit">
+                     <accelerator>
+                        <KeyCodeCombination alt="UP" code="Q" control="UP" meta="UP" shift="UP" shortcut="DOWN" />
+                     </accelerator></MenuItem>
+          </items>
+        </Menu>
+<!--
+        <Menu mnemonicParsing="false" text="Edit">
+          <items>
+            <MenuItem onAction="#onMenuEditAnySelected" text="Undo" />
+            <MenuItem onAction="#onMenuEditAnySelected" text="Redo">
+                     <accelerator>
+                        <KeyCodeCombination alt="UP" code="Y" control="DOWN" meta="UP" shift="UP" shortcut="UP" />
+                     </accelerator></MenuItem>
+            <SeparatorMenuItem mnemonicParsing="false" />
+            <MenuItem mnemonicParsing="false" text="Cut" />
+            <MenuItem mnemonicParsing="false" text="Copy" />
+            <MenuItem mnemonicParsing="false" text="Paste" />
+            <MenuItem mnemonicParsing="false" text="Delete" />
+            <SeparatorMenuItem mnemonicParsing="false" />
+            <MenuItem mnemonicParsing="false" text="Select All" />
+            <MenuItem mnemonicParsing="false" text="Unselect All" />
+          </items>
+        </Menu>
+      -->
+        <Menu text="%menu.help">
+          <items>
+            <MenuItem onAction="#onMenuAboutSelected" text="%menu.about" />
+          </items>
+        </Menu>
+      </menus>
+    </MenuBar>
+      <BorderPane prefHeight="9999.0">
+         <bottom>
+            <FlowPane hgap="16.0" maxHeight="-Infinity" vgap="16.0" BorderPane.alignment="CENTER">
+               <children>
+                  <Button mnemonicParsing="false" onAction="#onButtonSortClicked" text="%button.sort" />
+                  <Button mnemonicParsing="false" onAction="#onButtonReverseClicked" text="%button.reverse" />
+                  <Button mnemonicParsing="false" onAction="#onButtonExpandClicked" text="%button.expand" />
+                  <Button mnemonicParsing="false" onAction="#onButtonFlipClicked" text="%button.flip" />
+                  <Button mnemonicParsing="false" onAction="#onButtonZipClicked" text="%button.zip" />
+                  <CheckBox fx:id="cbInputFromClipboard" mnemonicParsing="false" text="%checkbox.fromClipboard" />
+                  <CheckBox fx:id="cbOutputFromClipboard" mnemonicParsing="false" text="%checkbox.toClipboard" />
+               </children>
+               <padding>
+                  <Insets bottom="10.0" left="10.0" top="10.0" />
+               </padding>
+            </FlowPane>
+         </bottom>
+         <center>
+            <TextArea fx:id="textArea" BorderPane.alignment="CENTER">
+               <font>
+                  <Font name="Monospaced Regular" size="13.0" />
+               </font>
+            </TextArea>
+         </center>
+         <left>
+            <Pane prefWidth="3.0" BorderPane.alignment="CENTER" />
+         </left>
+         <top>
+            <Pane prefHeight="3.0" BorderPane.alignment="CENTER" />
+         </top>
+         <right>
+            <Pane prefWidth="3.0" BorderPane.alignment="CENTER" />
+         </right>
+      </BorderPane>
+  </children>
+</VBox>
