@@ -1,0 +1,9 @@
+
+menu.file=ファイル(_F)
+menu.open=開く(_O)
+menu.quit=終了(_Q)
+menu.help=ヘルプ(_H)
+menu.about=このアプリについて(_A)
+
+checkbox.fromClipboard=クリップボードから入力
+checkbox.toClipboard=クリップボードへ出力

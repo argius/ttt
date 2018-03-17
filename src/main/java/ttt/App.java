@@ -11,8 +11,11 @@ import javafx.scene.control.*;
 import javafx.scene.input.*;
 import javafx.scene.layout.*;
 import javafx.stage.*;
+import minestra.text.*;
 
 public final class App extends Application implements Initializable {
+
+    private static final ResourceSheaf res = ResourceSheaf.create().withMessages().withDefaultLocale();
 
     @FXML
     private MenuBar menuBar;
@@ -37,15 +40,14 @@ public final class App extends Application implements Initializable {
 
     @Override
     public void start(Stage stage) throws Exception {
-        ResourceBundle rb = ResourceBundle.getBundle("messages");
-        stage.setTitle(rb.getString("product.name"));
+        stage.setTitle(res.string("product.name"));
         stage.setScene(new Scene(new BorderPane()));
         stage.setWidth(800d);
         stage.setHeight(560d);
         stage.setOnCloseRequest(x -> {
             Platform.exit();
         });
-        Parent root = FXMLLoader.load(getClass().getResource("main.fxml"), rb);
+        Parent root = FXMLLoader.load(getClass().getResource("main.fxml"), res.toResourceBundle());
         Scene scene = new Scene(root);
         stage.setScene(scene);
         stage.show();
